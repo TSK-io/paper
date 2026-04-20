@@ -1,0 +1,28 @@
+@startuml
+
+left to right direction
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName Microsoft YaHei
+skinparam defaultTextAlignment center
+skinparam linetype ortho
+skinparam packageStyle rectangle
+skinparam componentStyle rectangle
+skinparam roundcorner 0
+
+rectangle "Web服务" as Web
+rectangle "串口通信" as Serial
+rectangle "数据处理" as Data
+rectangle "数据库" as DB
+rectangle "控制策略" as Ctrl
+rectangle "图像分析" as Vision
+rectangle "云端同步" as Cloud
+
+Web --> Data
+Serial --> Data
+Data --> DB
+Data --> Ctrl
+Data --> Vision
+Data --> Cloud
+
+@enduml

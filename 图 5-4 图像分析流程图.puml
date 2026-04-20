@@ -1,0 +1,23 @@
+@startuml
+
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName Microsoft YaHei
+skinparam defaultTextAlignment center
+skinparam roundcorner 0
+
+:开始;
+:采集图像;
+:图像预处理;
+:颜色空间转换;
+:特征提取;
+
+if (图像有效?) then (是)
+  :结果分析;
+  :输出结果;
+else (否)
+  :重新采集;
+endif
+
+:结束;
+@enduml

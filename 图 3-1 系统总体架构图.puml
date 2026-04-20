@@ -1,0 +1,24 @@
+@startuml
+
+left to right direction
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName Microsoft YaHei
+skinparam defaultTextAlignment center
+skinparam linetype ortho
+skinparam packageStyle rectangle
+skinparam roundcorner 0
+
+rectangle "用户" as User
+
+rectangle "设备端\n传感与控制" as Device
+rectangle "边缘端\n数据处理与决策" as Edge
+rectangle "云端\n消息同步" as Cloud
+rectangle "Web端\n监测与管理" as Web
+
+Device --> Edge
+Edge --> Cloud
+User --> Web
+Web --> Edge
+
+@enduml

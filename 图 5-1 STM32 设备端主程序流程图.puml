@@ -1,0 +1,25 @@
+@startuml
+left to right direction
+
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam defaultFontName Microsoft YaHei
+
+rectangle "开始" as S
+rectangle "系统上电" as P1
+rectangle "硬件初始化\n(OLED、传感器、继电器、串口)" as P2
+rectangle "输入处理\n(手势识别、串口命令)" as A
+rectangle "环境参数采集\n(温湿度、光照、土壤湿度)" as P4
+rectangle "设备控制与界面更新\n(水泵/灯带控制、OLED刷新)" as P5
+rectangle "数据封装上传" as P6
+
+S -right-> P1
+P1 -right-> P2
+P2 -right-> A
+A -right-> P4
+P4 -right-> P5
+P5 -right-> P6
+P6 -down-> A
+
+@enduml

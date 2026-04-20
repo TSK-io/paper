@@ -1,0 +1,26 @@
+@startuml
+
+top to bottom direction
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName Microsoft YaHei
+skinparam defaultTextAlignment center
+skinparam linetype ortho
+skinparam roundcorner 0
+
+rectangle "环境数据" as Data
+rectangle "设备端" as Device
+rectangle "边缘端" as Edge
+rectangle "Web端" as Web
+rectangle "执行模块" as Actuator
+rectangle "用户" as User
+
+Data --> Device 
+Device --> Edge 
+Edge --> Web 
+
+User --> Web 
+Web --> Edge 
+Edge --> Actuator 
+
+@enduml

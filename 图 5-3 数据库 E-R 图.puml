@@ -1,0 +1,19 @@
+@startuml
+left to right direction
+
+rectangle "用户" as User
+rectangle "角色" as Role
+rectangle "用户角色关联" as UserRole
+rectangle "设备" as Device
+rectangle "环境数据" as Data
+rectangle "控制记录" as Log
+rectangle "灌溉策略" as Policy
+
+User -- UserRole
+Role -- UserRole
+
+Device -- Data
+Device -- Log
+Device -- Policy
+
+@enduml
